@@ -1,0 +1,114 @@
+[{
+    "title" : "@@userview.treeMenu.config@@",
+    "properties" : [{
+        "name" : "id",
+        "label" : "Id",
+        "type" : "hidden"
+    },
+    {
+        "name" : "customId",
+        "label" : "@@userview.calendarMenu.customId@@",
+        "type" : "textfield",
+        "regex_validation" : "^[a-zA-Z0-9_]+$",
+        "validation_message" : "@@userview.calendarMenu.invalidId@@"
+    },
+    {
+        "name" : "label",
+        "label" : "@@userview.calendarMenu.label@@",
+        "type" : "textfield",
+        "required" : "True"
+    },
+    {
+        "name" : "binder",
+        "label" : "@@userview.calendarMenu.binder@@",
+        "type" : "elementselect",
+        "required" : "True",
+        "options_ajax" : "[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.datalist.model.DataListBinderDefault",
+        "url" : "[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions"
+    },
+    {
+        "name" : "depth",
+        "label" : "@@userview.treeMenu.depth@@",
+        "type" : "textfield",
+        "value" : "2",
+        "required" : "True"
+    }]
+},
+{
+    "title" : "@@userview.calendarMenu.mapping@@",
+    "properties" : [{
+        "name" : "treeNodeLabel",
+        "label" : "@@userview.treeMenu.mapping.treeNodeLabel@@",
+        "type" : "selectbox",
+        "options_ajax_on_change" : "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+        "options_ajax" : "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+        "options_ajax_mapping" : {"arrayObj": "columns", "value": "name", "label": "name", "addEmpty": true},
+        "options_ajax_method" : "POST",
+        "required" : "True"
+    },
+    {
+        "name" : "treeNodeParentId",
+        "label" : "@@userview.treeMenu.mapping.treeNodeParentId@@",
+        "type" : "selectbox",
+        "options_ajax_on_change" : "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+        "options_ajax" : "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+        "options_ajax_mapping" : {"arrayObj": "columns", "value": "name", "label": "name", "addEmpty": true},
+        "options_ajax_method" : "POST"
+    },
+    {
+        "name" : "rootParentId",
+        "label" : "@@userview.treeMenu.mapping.rootParentId@@",
+        "type" : "textfield"
+    },
+    {
+        "name" : "treeNodeParams",
+        "label" : "@@userview.treeMenu.mapping.params@@",
+        "type" : "grid",
+        "columns" : [
+        {
+            "key" : "paramName",
+            "label" : "@@userview.treeMenu.mapping.params.paramName@@",
+            "required" : "True"
+        },
+        {
+            "key" : "column",
+            "label" : "@@userview.treeMenu.mapping.params.columnId@@",
+            "options_ajax_on_change" : "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+            "options_ajax" : "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+            "options_ajax_mapping" : {"arrayObj": "columns", "value": "name", "label": "name", "addEmpty": true},
+            "options_ajax_method" : "POST",
+            "required" : "True"
+        },
+        {
+            "key" : "defaultValue",
+            "label" : "@@userview.treeMenu.mapping.params.defaultValue@@"
+        }],
+        "required" : "true"
+    },
+    {
+        "name" : "orderBy",
+        "label" : "@@dbuilder.orderBy@@",
+        "type" : "selectbox",
+        "options_ajax_on_change" : "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+        "options_ajax" : "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+        "options_ajax_mapping" : {"arrayObj": "columns", "value": "name", "label": "name", "addEmpty": true},
+        "options_ajax_method" : "POST"
+    },
+    {
+        "name" : "order",
+        "label" : "@@dbuilder.order@@",
+        "type" : "selectbox",
+        "options" : [
+            {"label" : "@@dbuilder.order.asc@@", "value" : "false"},
+            {"label" : "@@dbuilder.order.desc@@", "value" : "true"}
+        ]
+    },
+    {
+        "name" : "innerMenu",
+        "label" : "@@userview.treeMenu.innerMenu@@",
+        "type" : "elementselect",
+        "required" : "True",
+        "options_ajax" : "[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.userview.model.UserviewMenu&exclude=org.joget.TreeMenu",
+        "url" : "[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions"
+    }]
+}]

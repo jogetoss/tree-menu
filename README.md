@@ -1,6 +1,6 @@
 # Description
 
-This repository is meant to serve as a general template for how to set up new repositories in the JogetOSS organization. 
+The Tree Menu plugin is a userview plugin that will dynamically draw a tree menu in the userview sidebar menu based on database records.
 
 # Getting Help
 

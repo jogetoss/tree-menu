@@ -35,6 +35,28 @@
     }]
 },
 {
+    "title" : "@@userview.treeMenu.customConfig@@",
+    "properties" :[{
+        "name" : "parentNodeIcon",
+        "label" : "@@userview.treeMenu.customConfig.parentIcon@@",
+        "type" : "icon-textfield",
+        "required" : "True"
+    },{
+        "name": "parentNodeTextColor",
+        "label": "@@userview.treeMenu.customConfig.parentTextColor@@",
+        "type": "color"
+    },{
+        "name" : "childNodeIcon",
+        "label" : "@@userview.treeMenu.customConfig.childIcon@@",
+        "type" : "icon-textfield",
+        "required" : "True"
+    },{
+        "name": "childNodeTextColor",
+        "label": "@@userview.treeMenu.customConfig.childTextColor@@",
+        "type": "color"
+    }]
+},
+{
     "title" : "@@userview.calendarMenu.mapping@@",
     "properties" : [{
         "name" : "treeNodeLabel",

@@ -7,6 +7,11 @@
 <div id="treemenu_${element.properties.id!}" class="tree_menu sidemenu_inner">
     ${tree!}
 </div>
+<style>
+#sidebar .nav li > a {
+    display: inline-block !important;
+}
+</style>
 <script>
     $(document).ready(function(){
         $('#treemenu_${element.properties.id!}').jstree({

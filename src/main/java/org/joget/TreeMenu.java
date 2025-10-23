@@ -85,7 +85,7 @@ public class TreeMenu extends UserviewMenu {
     }
 
     public String getVersion() {
-        return "6.0.0";
+        return "8.0.1";
     }
 
     public String getDescription() {

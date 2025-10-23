@@ -4,7 +4,7 @@
     <groupId>org.joget</groupId>
     <artifactId>tree_menu</artifactId>
     <packaging>bundle</packaging>
-    <version>8.0.0</version>
+    <version>8.0.1</version>
     <name>tree_menu</name>
     <url>http://www.joget.org</url>
     <build>

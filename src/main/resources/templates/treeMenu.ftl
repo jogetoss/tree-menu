@@ -8,7 +8,8 @@
     ${tree!}
 </div>
 <style>
-#sidebar .nav li > a {
+#sidebar .nav li > a,
+.left-nav #nav li a {
     display: inline-block !important;
 }
 </style>
